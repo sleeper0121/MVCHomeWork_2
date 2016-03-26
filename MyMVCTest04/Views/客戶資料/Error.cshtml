@@ -1,0 +1,11 @@
+﻿
+@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "客戶資料Controller 的錯誤";
+}
+
+<h1 class="text-danger">@ViewBag.Title</h1>
+<h2 class="text-danger">處理您的要求時發生錯誤。</h2>
+
+<pre>@Model.Exception.StackTrace</pre>

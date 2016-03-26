@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MyMVCTest04.Models.客戶列表>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h3> 搜尋 </h3>
+@using (Html.BeginForm())
+{
+    @Html.TextBox("custName", null, new { onChange = "this.form.submit();"})
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.客戶名稱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.客戶分類)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.聯絡人數量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.銀行帳戶數量)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.客戶名稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.客戶分類)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.聯絡人數量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.銀行帳戶數量)
+        </td>     
+    </tr>
+}
+
+</table>
